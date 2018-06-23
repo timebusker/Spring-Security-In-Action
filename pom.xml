@@ -7,22 +7,32 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>1.4.5.RELEASE</version>
+        <version>1.5.2.RELEASE</version>
     </parent>
 
     <properties>
         <project.build.sourceEncoding>utf-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>utf-8</project.reporting.outputEncoding>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
     </properties>
 
 
     <groupId>com.timebusker</groupId>
     <artifactId>Spring-Security-In-Action</artifactId>
     <version>1.0.0</version>
-    <modules>
-        <module>Spring-Security-In-Action-1-1-Hello</module>
-    </modules>
     <packaging>pom</packaging>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+        </dependency>
+    </dependencies>
 
     <repositories>
         <repository>
@@ -76,14 +86,10 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <configuration>
-                    <source>1.8</source>
-                    <target>1.8</target>
                     <meminitial>128m</meminitial>
                     <maxmem>512m</maxmem>
                     <fork>true</fork>
-                    <compilerVersion>1.3</compilerVersion>
                     <encoding>UTF-8</encoding>
-                    <compilerArgument>-verbose -bootclasspath ${java.home}\lib\rt.jar</compilerArgument>
                 </configuration>
             </plugin>
         </plugins>
